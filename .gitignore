@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Satellite data
+Raw_Data/
+Processed_Data/
+
+# Temporary files
+*.tmp
+*.log
