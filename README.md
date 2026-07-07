@@ -75,6 +75,31 @@ Aditya_L1_Project/
 
 ---
 
+## Dataset
+
+The dataset is hosted on Google Drive because it is too large to store on GitHub.
+
+### Download
+
+https://drive.google.com/drive/folders/1pWUoWb_oGE1jtIZCPxaoG2efrLtM96pR?usp=sharing
+
+Download the following folders:
+
+- Raw_Data
+- Processed_Data
+
+Place them in the project root directory so that the folder structure becomes:
+
+Aditya_L1_Project/
+│
+├── Raw_Data/
+├── Processed_Data/
+├── Scripts/
+├── requirements.txt
+└── README.md
+
+---
+
 ## Current Progress
 
 ✅ FITS extraction
@@ -119,36 +144,31 @@ Clone the repository
 git clone https://github.com/itz-ayushimishra/Aditya-L1-Solar-Flare-Forecasting.git
 ```
 
-Move into the project directory
+Move into the project
 
 ```bash
 cd Aditya-L1-Solar-Flare-Forecasting
 ```
 
-Install the required packages
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the data extraction pipeline
+Download the dataset from the Google Drive link above and place the folders inside the project directory.
+
+Run the extraction pipeline (if required)
 
 ```bash
 python Scripts/main.py
 ```
 
-Generate all light curve plots
+Generate light curve plots
 
 ```bash
 python Scripts/plot_all_lightcurves.py
 ```
-
-Generate the light curve summary
-
-```bash
-python Scripts/lightcurve_summary.py
-```
-
 ---
 
 ## Contributors
