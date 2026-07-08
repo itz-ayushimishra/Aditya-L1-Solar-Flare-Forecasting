@@ -1,7 +1,11 @@
 from pathlib import Path
 import pandas as pd
 
-processed_folder = Path("Processed_Data")
+from config import *
+
+PAYLOAD = "SoLEXS"
+
+processed_folder = PROCESSED_DATA / PAYLOAD
 
 summary = []
 
@@ -57,9 +61,11 @@ for folder in sorted(processed_folder.iterdir()):
 
 summary_df = pd.DataFrame(summary)
 
-summary_df.to_csv("LightCurve_Summary.csv", index=False)
+summary_file = processed_folder / "LightCurve_Summary.csv"
+
+summary_df.to_csv(summary_file, index=False)
 
 print("\nDone!")
 print(summary_df)
 
-print("\nSummary saved as LightCurve_Summary.csv")
+print(f"\nSummary saved as {summary_file}")

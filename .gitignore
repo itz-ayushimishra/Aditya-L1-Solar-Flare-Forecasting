@@ -12,3 +12,6 @@ Processed_Data/
 # Temporary files
 *.tmp
 *.log
+
+__pycache__/
+*.pyc

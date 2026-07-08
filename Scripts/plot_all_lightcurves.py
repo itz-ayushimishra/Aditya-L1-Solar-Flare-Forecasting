@@ -2,15 +2,17 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Folder containing processed data
-processed_folder = Path("Processed_Data")
+from config import *
 
-# Folder to save plots
-plots_folder = Path("Plots")
-plots_folder.mkdir(exist_ok=True)
+PAYLOAD = "SoLEXS"
+
+PROCESSED_FOLDER = PROCESSED_DATA / PAYLOAD
+PLOTS_FOLDER = PLOTS / PAYLOAD
+
+PLOTS_FOLDER.mkdir(parents=True, exist_ok=True)
 
 # Get all date folders
-date_folders = sorted(processed_folder.iterdir())
+date_folders = sorted(PROCESSED_FOLDER.iterdir())
 
 for folder in date_folders:
 
@@ -60,7 +62,7 @@ for folder in date_folders:
     plt.grid(True)
 
     # Save graph
-    plot_file = plots_folder / f"{folder.name}_LightCurve.png"
+    plot_file = PLOTS_FOLDER / f"{folder.name}_LightCurve.png"
     plt.savefig(plot_file, dpi=300)
     plt.close()
 

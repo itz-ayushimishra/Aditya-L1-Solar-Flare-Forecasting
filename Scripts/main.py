@@ -5,6 +5,13 @@ from astropy.io import fits
 from astropy.table import Table
 import pandas as pd
 
+from config import *
+
+PAYLOAD = "SoLEXS"
+
+RAW_DATA_FOLDER = RAW_DATA / PAYLOAD
+PROCESSED_DATA_FOLDER = PROCESSED_DATA / PAYLOAD
+
 def extract_lightcurve(zip_ref, filename):
 
     print("\nOpening Light Curve...")
@@ -13,7 +20,7 @@ def extract_lightcurve(zip_ref, filename):
     detector = filename.split("/")[1]
     print("Date:", date)
 
-    date_folder = Path("Processed_Data") / date
+    date_folder = PROCESSED_DATA_FOLDER / date
     date_folder.mkdir(exist_ok=True)
 
     with zip_ref.open(filename) as gz_file:
@@ -47,7 +54,7 @@ def extract_gti(zip_ref, filename):
     detector = filename.split("/")[-1].split("_")[3]
     print("Detector:", detector)
 
-    date_folder = Path("Processed_Data") / date
+    date_folder = PROCESSED_DATA_FOLDER / date
     date_folder.mkdir(exist_ok=True)
 
     with zip_ref.open(filename) as gz_file:
@@ -79,7 +86,7 @@ def extract_spectrum(zip_ref, filename):
     date = filename.split("/")[0].split("_")[3]
     detector = filename.split("/")[1]
 
-    date_folder = Path("Processed_Data") / date
+    date_folder = PROCESSED_DATA_FOLDER / date
     date_folder.mkdir(exist_ok=True)
 
     with zip_ref.open(filename) as gz_file:
@@ -167,12 +174,11 @@ def extract_spectrum(zip_ref, filename):
 
 
 # Folder containing ZIP files
-raw_data_folder = Path("Raw_Data")
-processed_data_folder = Path("Processed_Data")
-processed_data_folder.mkdir(exist_ok=True)
+RAW_DATA_FOLDER.mkdir(parents=True, exist_ok=True)
+PROCESSED_DATA_FOLDER.mkdir(parents=True, exist_ok=True)
 
 # Get all ZIP files
-zip_files = list(raw_data_folder.glob("*.zip"))
+zip_files = list(RAW_DATA_FOLDER.glob("*.zip"))
 
 print("ZIP files found:")
 
