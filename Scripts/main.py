@@ -113,65 +113,7 @@ def extract_spectrum(zip_ref, filename):
             df.to_csv(raw_output, index=False)
 
             print("\nRaw Spectrum saved successfully!")
-
-            # Test only first 10 spectra
-            # df = df.head(10)
-
-            # expanded_rows = []
-
-            # # Go through every spectrum
-            # for _, row in df.iterrows():
-
-            #     channels = row["CHANNEL"]
-            #     counts = row["COUNTS"]
-
-            #     # Go through all 340 channels
-            #     for channel, count in zip(channels, counts):
-
-            #         expanded_rows.append({
-            #             "SPEC_NUM": row["SPEC_NUM"],
-            #             "TSTART": row["TSTART"],
-            #             "TELAPSE": row["TELAPSE"],
-            #             "EXPOSURE": row["EXPOSURE"],
-            #             "CHANNEL": channel,
-            #             "COUNTS": count
-            #         })
-
-            # # Create new dataframe
-            # expanded_df = pd.DataFrame(expanded_rows)
-
-            # # Show one complete spectrum
-            # #spec2 = expanded_df[expanded_df["SPEC_NUM"] == 2]
-            # # print("\nSpectrum 2 summary")
-            # # print(spec2.head(20))
-            # # print(spec2.tail(20))
-
-            # # print("\nMaximum counts in Spectrum 2:")
-            # # print(spec2["COUNTS"].max())
-            # # print("\nChannel having maximum counts:")
-            # # max_row = spec2.loc[spec2["COUNTS"].idxmax()]
-            # # print(max_row)
-            # # print("\nFirst non-zero channels:")
-            # # print(spec2[spec2["COUNTS"] > 0].head(20))
-
-            # # print("\nChecking which spectra contain signal...")
-
-            # # signal = expanded_df.groupby("SPEC_NUM")["COUNTS"].sum()
-
-            # # print(signal[signal > 0].head(20))
-
-            # # print("\nFirst 20 rows:")
-            # # print(expanded_df.head(20))
-
-            # # print("\nFirst 10 rows of Spectrum 2:")
-            # # print(expanded_df[expanded_df["SPEC_NUM"] == 2].head(10))
-
-            # output_file = date_folder / f"{detector}_ExpandedSpectrum.csv"
-
-            # expanded_df.to_csv(output_file, index=False)
-
-            # print("\nExpanded Spectrum saved successfully!")
-
+            
 
 # Folder containing ZIP files
 RAW_DATA_FOLDER.mkdir(parents=True, exist_ok=True)

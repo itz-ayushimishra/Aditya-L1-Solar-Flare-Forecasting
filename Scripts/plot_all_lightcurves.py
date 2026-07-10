@@ -7,7 +7,7 @@ from config import *
 PAYLOAD = "SoLEXS"
 
 PROCESSED_FOLDER = PROCESSED_DATA / PAYLOAD
-PLOTS_FOLDER = PLOTS / PAYLOAD
+PLOTS_FOLDER = PLOTS / PAYLOAD / "LightCurve"
 
 PLOTS_FOLDER.mkdir(parents=True, exist_ok=True)
 

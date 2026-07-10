@@ -8,10 +8,8 @@ __pycache__/
 # Satellite data
 Raw_Data/
 Processed_Data/
+Plots/
 
 # Temporary files
 *.tmp
 *.log
-
-__pycache__/
-*.pyc
