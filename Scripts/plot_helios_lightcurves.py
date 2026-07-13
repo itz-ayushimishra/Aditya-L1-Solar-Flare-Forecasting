@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 processed_folder = PROJECT_ROOT / "Processed_Data" / "HEL1OS"
-plots_folder = PROJECT_ROOT / "Plots" / "HEL1OS"
+plots_folder = PROJECT_ROOT / "Plots" / "HEL1OS" / "LightCurve"
 
 plots_folder.mkdir(parents=True, exist_ok=True)
 
@@ -27,7 +27,7 @@ for date_folder in sorted(processed_folder.iterdir()):
 
         detector_plot_folder.mkdir(parents=True, exist_ok=True)
 
-        for csv_file in detector_folder.glob("*.csv"):
+        for csv_file in detector_folder.glob("LightCurve*.csv"):
 
             print(f"Processing {csv_file.name}")
 
