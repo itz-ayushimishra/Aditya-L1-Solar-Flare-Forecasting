@@ -19,7 +19,7 @@ for date_folder in sorted(processed_folder.iterdir()):
 
         detector = detector_folder.name
 
-        for csv_file in sorted(detector_folder.glob("*.csv")):
+        for csv_file in sorted(detector_folder.glob("LightCurve*.csv")):
 
             print(f"Processing {date_folder.name} | {detector} | {csv_file.name}")
 
