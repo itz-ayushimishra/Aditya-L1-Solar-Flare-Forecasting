@@ -3,13 +3,18 @@ __pycache__/
 *.pyc
 
 # VS Code
-.vscode/
+.vscode   
 
 # Satellite data
 Raw_Data/
 Processed_Data/
 Plots/
 
+# Generated Reports
+EDA_REPORT/
+
 # Temporary files
 *.tmp
 *.log
+
+
